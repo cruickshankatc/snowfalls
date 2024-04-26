@@ -1,0 +1,1 @@
+let sliderNumber = 1;
