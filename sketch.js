@@ -2,25 +2,27 @@ function setup() {
   createCanvas(400, 400);
   sliderY = height - 20;
 }
-let blueValue = 200;
+let blueValue = 0;
 let greenValue = 100;
 let color = "rgb(50, 50, " + blueValue + ")";
 
-if (testTime <= 2000) {
-  color = '#0000FF';
-} else if (testTime <= 3000) {
-  color = '#FF00';
-}
+
+
 
 function draw() {
+  color = `rgb(0, ${greenValue}, ${blueValue})`;
   background(color);
   
   
+   addCounter = 1 / sliderValue;
+   addCounter = parseFloat(addCounter.toFixed(2));
   
   
-  blueValue = round(sliderValue * 20);
-  greenValue = round(sliderValue * 20);
-  color = `rgb(0, ${greenValue}, ${blueValue})`;
+  
+  
+  //blueValue = round(sliderValue * 20);
+  //greenValue = round(sliderValue * 20);
+
   
   
   
@@ -43,13 +45,9 @@ function draw() {
   
   
   
+  counterMonitor();
+  dayChanger();
+  blueValue++;
   
-  
-  
-  
-  if (testTime <= 2000) {
-  color = 'rgb(0,8,41)';
-} else if (testTime <= 3000) {
-  color = '#FF0000';
-}
+  console.log(counter);
 }
