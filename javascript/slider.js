@@ -6,9 +6,6 @@ let sliderValue = 1; // Default value of the slider
 let dragging = false;
 
 
-
-
-
 function mousePressed() {
   // Check if the mouse is over the slider handle
   if (mouseX > sliderX && mouseX < sliderX + sliderWidth && mouseY > sliderY && mouseY < sliderY + sliderHeight) {
@@ -25,4 +22,22 @@ function mouseDragged() {
     // Update the slider value based on mouse position
     sliderValue = constrain(map(mouseX, sliderX, sliderX + sliderWidth, 1, 10), 1, 10);
   }
+}
+
+function drawSlider() {
+  //Draw the slider
+  fill(200);
+  rect(sliderX, sliderY, sliderWidth, sliderHeight);
+  
+  // Draw the slider handle
+  fill(150);
+  if (dragging) {
+    fill(100);
+  }
+  rect(sliderX + map(sliderValue, 1, 10, 0, sliderWidth), sliderY, 10, sliderHeight);
+  
+  // Display the value of the slider
+  fill(0);
+  textSize(16);
+  text("Speed Multiplier: " + sliderValue, sliderX, sliderY - 10);
 }
