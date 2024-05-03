@@ -1,3 +1,6 @@
+/*This file contains most things related to the slider such as the initial variables, the functions related to the slider and drawing the slider. The function which deals with the correlation between the slider and the counter is in counter.js*/
+
+//Initial variables
 let sliderX = 10; // X position of the slider
 let sliderY;      // Y position of the slider
 let sliderWidth = 100;
@@ -5,7 +8,7 @@ let sliderHeight = 10;
 let sliderValue = 1; // Default value of the slider
 let dragging = false;
 
-
+//Functions that allow user interaction with the slider
 function mousePressed() {
   // Check if the mouse is over the slider handle
   if (mouseX > sliderX && mouseX < sliderX + sliderWidth && mouseY > sliderY && mouseY < sliderY + sliderHeight) {
@@ -24,6 +27,8 @@ function mouseDragged() {
   }
 }
 
+//Puts all the pieces of the slider together for the
+//drawing which will be activated in draw.js
 function drawSlider() {
   //Draw the slider
   fill(200);

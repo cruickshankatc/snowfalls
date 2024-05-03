@@ -3,6 +3,8 @@ let timeDay;
 let timeEvening;
 let timeNight;
 
+//Time of day changes are made when counter reaches
+//certain number thresholds
 function dayChanger() {
   if (counter < 200) {
     timeDay = true;

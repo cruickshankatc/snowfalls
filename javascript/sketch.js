@@ -8,8 +8,7 @@ function draw() {
   drawSlider();
   counterMonitor();
   dayChanger();
-  addCounterSliderCorrelation()
-  blueValue++;
+  addCounterSliderCorrelation();
   
   console.log(counter);
 }
