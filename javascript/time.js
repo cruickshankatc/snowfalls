@@ -1,21 +1,55 @@
+let timePassageInterval = 200;
+let timeKeyPoints = [];
+
+let dayLimit;
+let eveningLimit;
+let nightLimit;
+
+let dayPeak;
+let eveningPeak;
+let nightPeak;
+
+function fillTimeKeyPoints () {
+  let y = timePassageInterval;
+  for (x = 0; x < 3; x++) {
+    timeKeyPoints.push(y);
+    y = y + timePassageInterval;
+  }
+  
+  dayLimit = timeKeyPoints[0];
+  eveningLimit = timeKeyPoints[1];
+  nightLimit = timeKeyPoints[2];
+  
+  dayPeak = dayLimit - (timePassageInterval/2);
+  eveningPeak = eveningLimit - (timePassageInterval/2);
+  nightPeak = nightLimit - (timePassageInterval/2);
+}
+
+fillTimeKeyPoints();
+
+
+
+
+
+
 //Day Variables
-let timeDay;
-let timeEvening;
-let timeNight;
+let dayTime;
+let eveningTime;
+let nightTime;
 
 //Time of day changes are made when counter reaches
 //certain number thresholds
 function dayChanger() {
   if (counter < 200) {
-    timeDay = true;
-    timeNight = false;
+    dayTime = true;
+    nightTime = false;
     //skyBlue++;
   } else if (counter > 200 && counter < 400) {
-    timeDay = false;
-    timeEvening = true;
+    dayTime = false;
+    eveningTime = true;
   } else if (counter > 400 && counter < 600) {
-    timeEvening = false;
-    timeNight = true;
+    eveningTime = false;
+    nightTime = true;
   } else if (counter > 600) {
     counter = 0;
   }

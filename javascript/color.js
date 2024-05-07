@@ -14,9 +14,9 @@ function colorChange() {
   color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
   background(color);
   
-  if (timeDay) {
+  if (dayTime) {
     blueValue++;
-  } else if (timeEvening) {
+  } else if (eveningTime) {
     greenValue++;
   }
 }

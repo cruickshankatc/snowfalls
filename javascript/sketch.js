@@ -10,5 +10,5 @@ function draw() {
   dayChanger();
   addCounterSliderCorrelation();
   
-  console.log(counter);
+  //console.log(counter);
 }
